@@ -30,6 +30,7 @@
 <div *ngFor="let item of object | keyvalue: 0">
   <div *ngFor="let item of object | keyvalue: 374">
     <div *ngFor="let item of object | keyvalue: null">
+    <!-- keyvalue: 0 no longer works in Angular 7. Just create a empty function: sortNull() {} and then set keyvalue: sortNull -->
       <!-- but they cause an exception (visible in the console) -->
       <!-- ERROR TypeError: The comparison function must be either a function or undefined -->
     </div>
