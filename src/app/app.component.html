@@ -25,3 +25,13 @@
     {{ item.key }} : {{ item.value }}
   </div>
 </div>
+
+<!-- The following syntaxes preserve the original property order -->
+<div *ngFor="let item of object | keyvalue: 0">
+  <div *ngFor="let item of object | keyvalue: 374">
+    <div *ngFor="let item of object | keyvalue: null">
+      <!-- but they cause an exception (visible in the console) -->
+      <!-- ERROR TypeError: The comparison function must be either a function or undefined -->
+    </div>
+  </div>
+</div>
